@@ -13,11 +13,12 @@
                 'https://cdn.discordapp.com/attachments/1071648264161607740/1140010587787632710/20230812144527_1.jpg',
                 'https://cdn.discordapp.com/attachments/1071648264161607740/1140010627247640677/20230812145345_1.jpg',
                 'https://cdn.discordapp.com/attachments/1071648264161607740/1140020478048735353/20230812144940_1.jpg',
+                'https://cdn.discordapp.com/attachments/1071648264161607740/1140027548370206720/20230812160204_1.jpg',
             ];
 
             var backgroundImage1 = document.getElementById('background1');
             var backgroundImage2 = document.getElementById('background2');
-            var currentImageIndex = 0;
+            var currentImageIndex = images.length * Math.random() | 0;  // Pick a random image index
             var isBackground1OnTop = true;  // We start with background1 on top
 
             function setBackground() {
@@ -103,7 +104,7 @@
             background-image: url('https://cdn.discordapp.com/attachments/1071648264161607740/1140010596054614066/20230812144716_1.jpg');
             background-position: center;
             background-size: cover;
-            filter: blur(3px);
+            filter: blur(5px);
             transform: scale(1.1);
             filter: grayscale(100%);
             animation: moveHorizontally 40s infinite;
@@ -130,7 +131,7 @@
 
         .background {
             /* ... existing styles ... */
-            animation: moveHorizontally 60s infinite;  // 60 seconds to complete one cycle of movement
+            animation: moveHorizontally 40s infinite;  // 60 seconds to complete one cycle of movement
         }
 
         
