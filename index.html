@@ -25,22 +25,19 @@
                     backgroundImage1.style.backgroundImage = `url(${images[currentImageIndex]})`;
                     backgroundImage1.style.opacity = '1';
                     backgroundImage2.style.opacity = '0';
-                    backgroundImage1.style.zIndex = '2';
-                    backgroundImage2.style.zIndex = '1';
                 } else {
                     backgroundImage2.style.backgroundImage = `url(${images[currentImageIndex]})`;
                     backgroundImage2.style.opacity = '1';
                     backgroundImage1.style.opacity = '0';
-                    backgroundImage2.style.zIndex = '2';
-                    backgroundImage1.style.zIndex = '1';
                 }
 
                 isBackground1OnTop = !isBackground1OnTop;
                 currentImageIndex = (currentImageIndex + 1) % images.length;
             }
 
+
             setBackground();  // Set the initial background
-            setInterval(setBackground, 30000);  // Change the background every 30 seconds
+            setInterval(setBackground, 10000);  // Change the background every 30 seconds
         });
     </script>
     <style>
@@ -109,9 +106,9 @@
             filter: blur(3px);
             transform: scale(1.1);
             filter: grayscale(100%);
-            animation: moveImage 120s linear infinite; /* 120 seconds to ensure smooth transition */
-            transition: opacity 3s ease; /* fade transition */
-            opacity: 0;
+            animation: moveHorizontally 40s infinite;
+            transition: opacity 3s ease;
+            opacity: 1;
         }
 
         #background2 {
@@ -119,11 +116,23 @@
             z-index: 2;
         }
 
-        @keyframes moveImage {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 50% 50%; }
-            100% { background-position: 0% 50%; }
+        @keyframes moveHorizontally {
+            0% {
+                transform: translateX(0) scale(1.1);  // Starts with a little scale to cover the screen during movement
+            }
+            50% {
+                transform: translateX(-2.5%) scale(1.1);  // Moves 5% to the right
+            }
+            100% {
+                transform: translateX(0) scale(1.1);  // Moves back to the starting position
+            }
         }
+
+        .background {
+            /* ... existing styles ... */
+            animation: moveHorizontally 60s infinite;  // 60 seconds to complete one cycle of movement
+        }
+
         
         .overlay {
             position: absolute;
