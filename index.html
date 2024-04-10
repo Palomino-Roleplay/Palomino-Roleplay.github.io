@@ -9,11 +9,11 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var images = [
-                'https://cdn.discordapp.com/attachments/1071648264161607740/1140010596054614066/20230812144716_1.jpg',
-                'https://cdn.discordapp.com/attachments/1071648264161607740/1140010587787632710/20230812144527_1.jpg',
-                'https://cdn.discordapp.com/attachments/1071648264161607740/1140010627247640677/20230812145345_1.jpg',
-                'https://cdn.discordapp.com/attachments/1071648264161607740/1140020478048735353/20230812144940_1.jpg',
-                'https://cdn.discordapp.com/attachments/1071648264161607740/1140027548370206720/20230812160204_1.jpg',
+                './images/bar.jpg',
+                './images/diner.jpg',
+                './images/dogs.jpg',
+                './images/vault.jpg',
+                './images/warehouse.jpg',
             ];
 
             var backgroundImage1 = document.getElementById('background1');
@@ -38,7 +38,7 @@
 
 
             setBackground();  // Set the initial background
-            setInterval(setBackground, 10000);  // Change the background every 30 seconds
+            setInterval(setBackground, 10000);
         });
     </script>
     <style>
@@ -101,7 +101,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://cdn.discordapp.com/attachments/1071648264161607740/1140010596054614066/20230812144716_1.jpg');
+            background-image: url('./images/bar.jpg');
             background-position: center;
             background-size: cover;
             filter: blur(5px);
@@ -119,19 +119,19 @@
 
         @keyframes moveHorizontally {
             0% {
-                transform: translateX(0) scale(1.1);  // Starts with a little scale to cover the screen during movement
+                transform: translateX(0) scale(1.1);
             }
             50% {
-                transform: translateX(-2.5%) scale(1.1);  // Moves 5% to the right
+                transform: translateX(-2.5%) scale(1.1);
             }
             100% {
-                transform: translateX(0) scale(1.1);  // Moves back to the starting position
+                transform: translateX(0) scale(1.1);
             }
         }
 
         .background {
             /* ... existing styles ... */
-            animation: moveHorizontally 40s infinite;  // 60 seconds to complete one cycle of movement
+            animation: moveHorizontally 40s infinite;
         }
 
         
