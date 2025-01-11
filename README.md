@@ -1,2 +1,1 @@
-# Palomino-Roleplay.github.io
-Loading screen
+https://palomino-roleplay.github.io/
